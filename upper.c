@@ -2,7 +2,7 @@
 
 int main() {
     FILE *in = fopen("task.in", "r");
-    FILE *out = fopen("task.out", "a");
+    FILE *out = fopen("task.out", "w");
     int offset = 'a' - 'A';
     char symbol;
 
