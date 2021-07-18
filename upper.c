@@ -1,18 +1,18 @@
 #include <stdio.h>
 
 int main() {
-    char string[10] = "Caiman77!";
-    const int offset = 'a' - 'A';
+    FILE *in = fopen("task.in", "r");
+    FILE *out = fopen("task.out", "a");
+    int offset = 'a' - 'A';
+    char symbol;
 
-    for ( int i = 0; string[i] != '\0'; i++ ) {
-        char symbol = string[i];
-
+    for ( ; fscanf(in, "%c", &symbol) == 1; ) {
         if ( symbol >= 'a' && symbol <= 'z' ) {
             symbol -= offset;
         }
-        printf("%c", symbol);
+        fprintf(out, "%c", symbol);
     }
-    printf("\n");
+    fprintf(out, "\n");
 
     return 0;
 }
